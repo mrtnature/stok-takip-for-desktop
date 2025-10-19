@@ -1,0 +1,1 @@
+# stok-takip-for-desktop
