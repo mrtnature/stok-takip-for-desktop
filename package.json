@@ -1,0 +1,22 @@
+{
+  "name": "stok-takip-for-desktop",
+  "version": "1.0.0",
+  "description": "Masaüstü için stok takip uygulaması / Desktop stock tracking application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "stock",
+    "inventory",
+    "desktop",
+    "electron",
+    "stok-takip"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^38.3.0"
+  }
+}

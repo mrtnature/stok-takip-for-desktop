@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Takip Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 Stok Takip Sistemi</h1>
+            <p class="subtitle">Ürün Envanter Yönetimi</p>
+        </header>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2>Ürün Ekle / Düzenle</h2>
+                <form id="productForm">
+                    <input type="hidden" id="editId" value="">
+                    
+                    <div class="form-group">
+                        <label for="productName">Ürün Adı:</label>
+                        <input type="text" id="productName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productCode">Ürün Kodu:</label>
+                        <input type="text" id="productCode" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productCategory">Kategori:</label>
+                        <input type="text" id="productCategory" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productQuantity">Miktar:</label>
+                        <input type="number" id="productQuantity" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productPrice">Fiyat (₺):</label>
+                        <input type="number" id="productPrice" step="0.01" min="0" required>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">
+                            <span id="formButtonText">Ekle</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">
+                            İptal
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="list-section">
+                <div class="list-header">
+                    <h2>Ürün Listesi</h2>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Ürün ara...">
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-label">Toplam Ürün</div>
+                        <div class="stat-value" id="totalProducts">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Toplam Değer</div>
+                        <div class="stat-value" id="totalValue">₺0.00</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Düşük Stok</div>
+                        <div class="stat-value" id="lowStock">0</div>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="productTable">
+                        <thead>
+                            <tr>
+                                <th>Ürün Kodu</th>
+                                <th>Ürün Adı</th>
+                                <th>Kategori</th>
+                                <th>Miktar</th>
+                                <th>Fiyat</th>
+                                <th>Toplam</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productList">
+                            <tr class="empty-state">
+                                <td colspan="7">Henüz ürün eklenmemiş. Yukarıdaki formu kullanarak ürün ekleyin.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
